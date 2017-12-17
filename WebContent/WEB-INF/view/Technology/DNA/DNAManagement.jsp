@@ -16,6 +16,8 @@
 	src="<%=basePath%>js/Technology/DNA/DNAGetBirth.js"></script>
 <script type="text/javascript"
 	src="<%=basePath%>js/Technology/DNA/CreateDNA.js"></script>
+<script type="text/javascript"
+	src="<%=basePath%>js/Technology/DNA/Preview_DNA_Excel.js"></script>
 
 <script type="text/javascript"
 	src="<%=basePath%>js/Technology/DNA/DNADetails.js"></script>
@@ -48,14 +50,20 @@
 							<i class="fa fa-plus-square"></i> 新增DNA记录
 						</button>
 					</div>
-					<div style="float: left;display:none;">
-						<input type="file" class="form-control" id="input_excel" style="float:left;"/>
-					</div>
-					<div style="width: 150px;  float: left;">
-						<button class="btn btn-default" onclick=""  style="float:left;">
-							<i class="fa fa-plus-square"></i> 导入Excel表
+					<div style="width: 150px;  float: left; margin:0 20px 0 0">
+						<button class="btn btn-default" onclick="input_excel.click()"  style="float:left;">
+							<i class="fa fa-download"></i> 从Excel表导入
 						</button>
 					</div>
+					<div style="width: 150px;  float: left;">
+						<button class="btn btn-default" style="float:left;" onclick="Export_DNA_To_Excel()">
+							<i class="fa fa-upload"></i> 导出到Excel表
+						</button>
+					</div>
+					<div style="float: left;display:none;">
+						<input type="file" class="form-control" id="input_excel" name="input_excel" style="float:left;" onchange="Preview_DNA_Excel(this)"/>
+					</div>
+					
 					<!-- 检索 -->
 					<div class="input-group" style="width: 300px; float: right;">
 						<input id="input_DNASearchText" class="form-control"
